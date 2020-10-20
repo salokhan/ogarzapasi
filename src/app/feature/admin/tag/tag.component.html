@@ -1,0 +1,19 @@
+<div class='tag d-flex justify-content-between my-1 mx-1'>
+  <!-- <div class='mr-1 p-0'>salman</div> -->
+  <div class='mr-1 p-0'>
+      {{tag.tag}}
+  </div>
+  <!-- <div class='ml-1 p-0'>
+      <small class='text-info'>({{tag.count}})</small>
+  </div> -->
+  <div class='ml-1 p-0'>
+      <span class="actionIcons" (click)='editClicked()'>
+          <small><i class="fas fa-edit"></i></small>
+      </span>
+  </div>
+  <div class='mr-1 ml-1  p-0'>
+      <span class="actionIcons" (click)='deleteClicked()'>
+          <small><i class="fas fa-times" ></i></small>
+      </span>
+  </div>
+</div>

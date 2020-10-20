@@ -5,6 +5,7 @@ import { CountriesListComponent } from './countries-list/countries-list.componen
 import { ServiceProviderProfileComponent } from './service-provider-profile/service-provider-profile.component';
 import { ServicesListComponent } from './services-list/services-list.component';
 import { StatesListComponent } from './states-list/states-list.component';
+import { TagsComponent } from './tags/tags.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'cities',
     component: CitiesListComponent
+  },
+  {
+    path: 'tags',
+    component: TagsComponent
   }
 
 ];

@@ -143,5 +143,35 @@ export class AdminService {
 
   // cities - end
 
+  // tags - start
+  addTag(tag): Promise<any> {
+    tag.createDate = new Date().getTime();
+    tag.updateDate = new Date().getTime();
+    return this.db.collection('tags').add(tag);
+
+  }
+  updateTag(uid, tag): Promise<any> {
+    const updateDate = new Date().getTime();
+    return this.db.collection('tags').doc(uid).update({ tag, updateDate });
+  }
+  getTagByID(tagUID): Observable<any> {
+    return this.db.collection('tags').doc(tagUID).valueChanges();
+
+  }
+  getAllTags(): Observable<any> {
+    const tagRef = this.db.collection('tags');
+    return tagRef.valueChanges({ idField: 'uid' });
+  }
+  batchDeleteTags(selectedTags): Promise<any> {
+    const batch = this.db.firestore.batch();
+    selectedTags.forEach(element => {
+      const documentRef = this.db.firestore.collection('tags').doc(element.uid);
+      batch.delete(documentRef);
+    });
+
+    return batch.commit();
+  }
+  // tags - end
+
 
 }

@@ -10,17 +10,17 @@
           <div class='mb-2'>
             <div class='text-sm-right'>
               <button type="button" class="btn btn-primary m-1"
-                (click)='addNewCountry(scrollCreateUpdateNewCountryModal)'>Add country</button>
-              <button type="button" class="btn btn-danger m-1" (click)='deleteSelectedCountries()'>Delete
-                country</button>
+                (click)='addNewProfile(scrollCreateUpdateNewProfileModal)'>Add country</button>
+              <button type="button" class="btn btn-danger m-1" (click)='deleteSelectedProfiles()'>Delete
+                profiles</button>
             </div>
-            <p-table #dtCountries [value]="countries" [(selection)]="selectedCountries" dataKey="uid"
+            <p-table #dtProfiles [value]="countries" [(selection)]="selectedProfiles" dataKey="uid"
               [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
               currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0"
               [rows]="10">
               <ng-template pTemplate="caption">
                 <div class="table-header">
-                  List of countries
+                  List of profiles
                   <!-- <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dtServices.filterGlobal($event.target.value, 'contains')"
@@ -63,7 +63,7 @@
                   <td>
                     <span class="p-column-title">
                       <a class='action-icon' href="javascript:void(0);" id='edit'
-                        (click)='updateCountry(scrollCreateUpdateNewCountryModal, country)'><i id='edit'
+                        (click)='updateCountry(scrollCreateUpdateNewProfileModal, country)'><i id='edit'
                           class="mdi mdi-circle-edit-outline"></i></a>
                       <a class='action-icon' href="javascript:void(0);" id='edit'
                         (click)='goToState(country.uid)'><i id='edit'
@@ -89,7 +89,7 @@
 
 
 <!-- Scrollable Modal for create new user  -->
-<ng-template #scrollCreateUpdateNewCountryModal let-modal="close">
+<ng-template #scrollCreateUpdateNewProfileModal let-modal="close">
   <div class="modal-header">
     <h4 class="modal-title">{{createUpdateText}} country</h4>
     <button type="button" class="close" (click)="modal('Cross click')" aria-label="Close">
@@ -97,7 +97,7 @@
     </button>
   </div>
   <div class="modal-body" appSlimScroll>
-    <app-add-update-country (outputMessage)='childComponentMessage($event)' [selectedRecord]='selectedCountry'>
-    </app-add-update-country>
+    <app-add-update-sp-profiles-by-admin (outputMessage)='childComponentMessage($event)' [selectedRecord]='selectedProfile'>
+    </app-add-update-sp-profiles-by-admin>
   </div>
 </ng-template>

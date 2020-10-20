@@ -1,0 +1,21 @@
+<app-ui-preloader [display]="loading"></app-ui-preloader>
+<div class="container">
+    <form class="needs-validation" name="tagForm" [formGroup]="tagForm" novalidate>
+        <!-- <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+        <ngb-alert type="success" *ngIf="success" [dismissible]="false">{{ success }}</ngb-alert> -->
+        <div class="form-group row mx-0 mt-2 mb-0">
+            <label class='col-4 col-form-label' for="tag">Tag Name</label>
+            <div class='col-sm-8 px-0'>
+                <input type="text" formControlName="tag" class="form-control form-control-sm"
+                    [ngClass]="{ 'is-invalid': submitted && f.tag.errors }" id="tag" placeholder="Tag Name" />
+                <div *ngIf="submitted && f.tag.errors" class="invalid-feedback">
+                    <div *ngIf="f.tag.errors.required">Tag Name is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-primary" (click)='saveTag()'>Save changes</button>
+  </div>
+</div>

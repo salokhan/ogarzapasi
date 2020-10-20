@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <app-locate-pagetitle title="Tags" [breadcrumbItems]="breadCrumbItems"></app-locate-pagetitle>
+  <app-ui-preloader [display]="loading"></app-ui-preloader>
+
+  <div class="row">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6">
+          <!-- <ngb-alert type="danger" *ngIf="errorMessage" [dismissible]="false">{{ errorMessage }}</ngb-alert> -->
+          <div class="card">
+              <div class="card-body panels">
+                  <div class="d-flex justify-content-between bg-light mt-1">
+                      <div class='p-2'>
+                          <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                          <input type="text" pInputText size="30" placeholder="Global Filter"
+                              (input)="filterWithContains($event)" style="width:auto">
+                      </div>
+                      <div class='p-2'>
+                          <div class='text-sm-right'>
+                              <button type="button" class="btn btn-primary"
+                                  (click)='createNewTag(scrollCreateNewTagModal)'>Add Tag</button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row mb-2">
+                      <div *ngFor="let tag of filteredTags;">
+                          <app-tag [tag]='tag' (editTagClicked)="onEditTagClicked($event,scrollCreateNewTagModal)" (deleteTagClicked)="onDeleteTagClicked($event)"></app-tag>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3"></div>
+  </div>
+</div>
+
+<!-- Scrollable Modal for create new stage -->
+<ng-template #scrollCreateNewTagModal let-modal="close">
+  <div class="modal-header">
+      <h4 class="modal-title">{{createUpdateText}} Tag</h4>
+      <button type="button" class="close" (click)="modal('Cross click')" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body" appSlimScroll>
+      <app-add-update-tag [selectedRecord]='selectedTag' (outputMessage)='childComponentMessage($event)'></app-add-update-tag>
+  </div>
+</ng-template>

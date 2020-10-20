@@ -17,9 +17,14 @@ import { StatesListComponent } from './states-list/states-list.component';
 import { AddUpdateStatesComponent } from './add-update-states/add-update-states.component';
 import { CitiesListComponent } from './cities-list/cities-list.component';
 import { AddUpdateCityComponent } from './add-update-city/add-update-city.component';
+import { TagsComponent } from './tags/tags.component';
+import { AddUpdateTagComponent } from './add-update-tag/add-update-tag.component';
+import { TagComponent } from './tag/tag.component';
+import { SpProfilesComponent } from './sp-profiles/sp-profiles.component';
+import { AddUpdateSpProfilesByAdminComponent } from './add-update-sp-profiles-by-admin/add-update-sp-profiles-by-admin.component';
 
 @NgModule({
-  declarations: [ServiceProviderProfileComponent, ServicesListComponent, AddUpdateServicesComponent, CountriesListComponent, AddUpdateCountryComponent, StatesListComponent, AddUpdateStatesComponent, CitiesListComponent, AddUpdateCityComponent],
+  declarations: [ServiceProviderProfileComponent, ServicesListComponent, AddUpdateServicesComponent, CountriesListComponent, AddUpdateCountryComponent, StatesListComponent, AddUpdateStatesComponent, CitiesListComponent, AddUpdateCityComponent, TagsComponent, AddUpdateTagComponent, TagComponent, SpProfilesComponent, AddUpdateSpProfilesByAdminComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
