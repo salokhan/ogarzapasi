@@ -1,0 +1,177 @@
+<div class="topbar-menu">
+    <div class="container-fluid">
+        <div id="navigation" [ngbCollapse]="!showMobileMenu">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu">
+                <li class="has-submenu">
+                    <a href="javascript: void(0);" (click)="onMenuClick($event)">
+                        <i class="fas fa-inbox"></i>Messages</a>
+                </li>
+                <li class="has-submenu">
+                    <a href="javascript: void(0);" (click)="onMenuClick($event)">
+                        <i class="fas fa-tasks"></i>Tasks</a>
+
+                </li>
+                <li class="has-submenu">
+                    <!-- <a href="javascript: void(0);" (click)="onContactClick($event)">
+                        <i class="far fa-address-book"></i>Contacts</a> -->
+
+                </li>
+                <li class="has-submenu">
+                    <!-- <a href="javascript: void(0);" (click)="onWorkflowsClick($event)">
+                        <i class="fas fa-bolt"></i>Workflows</a> -->
+
+                </li>
+                <li class="has-submenu">
+                    <!-- <a href="javascript: void(0);" (click)="onDealsClick($event)">
+                        <i class="far fa-money-bill-alt"></i>Deals</a> -->
+
+                </li>
+                <li class="has-submenu">
+                    <a href="javascript: void(0);" (click)="onMenuClick($event)"> <i class="fe-briefcase"></i>Reports
+                        <div class="arrow-down"></div></a>
+                    <ul class="submenu megamenu">
+                        <li>
+                            <ul>
+                                <li>
+                                    <a routerLink="/ui/buttons" routerLinkActive="active"
+                                        class="side-nav-link-ref">Buttons</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/cards" routerLinkActive="active"
+                                        class="side-nav-link-ref">Cards</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/portlets" routerLinkActive="active"
+                                        class="side-nav-link-ref">Portlets</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/tabs-accordions" routerLinkActive="active"
+                                        class="side-nav-link-ref">Tabs &
+                                        Accordions</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/modals" routerLinkActive="active"
+                                        class="side-nav-link-ref">Modals</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/progress" routerLinkActive="active"
+                                        class="side-nav-link-ref">Progress</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <a routerLink="/ui/notifications" routerLinkActive="active"
+                                        class="side-nav-link-ref">Notifications</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/images" routerLinkActive="active"
+                                        class="side-nav-link-ref">Images</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/carousel" routerLinkActive="active"
+                                        class="side-nav-link-ref">Carousel</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/video" routerLinkActive="active" class="side-nav-link-ref">Embed
+                                        Video</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/dropdowns" routerLinkActive="active"
+                                        class="side-nav-link-ref">Dropdowns</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/spinners" routerLinkActive="active"
+                                        class="side-nav-link-ref">Spinners</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>
+                                    <a routerLink="/ui/ribbons" routerLinkActive="active"
+                                        class="side-nav-link-ref">Ribbons</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/tooltips-popovers" routerLinkActive="active"
+                                        class="side-nav-link-ref">Tooltips & Popovers</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/ui-general" routerLinkActive="active"
+                                        class="side-nav-link-ref">General
+                                        UI</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/typography" routerLinkActive="active"
+                                        class="side-nav-link-ref">Typography</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ui/grid" routerLinkActive="active"
+                                        class="side-nav-link-ref">Grid</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-submenu" >
+                    <a href="javascript: void(0);" (click)="onMenuClick($event)"> <i class="fe-cpu"></i>Admin<div
+                            class="arrow-down"></div></a>
+                    <ul class="submenu">
+                        <li>
+                            <a routerLink="/adminUI/Roles" routerLinkActive="active"
+                                class="side-nav-link-ref">Admin</a>
+                        </li>
+                        <li>
+                            <a routerLink="/stage/stages" routerLinkActive="active"
+                                class="side-nav-link-ref">Stage</a>
+                        </li>
+                        <li>
+                            <a routerLink="/pipeline/configurepipeline" routerLinkActive="active"
+                                class="side-nav-link-ref">Pipeline</a>
+                        </li>
+                        <li>
+                            <a routerLink="/tag/tags" routerLinkActive="active"
+                                class="side-nav-link-ref">Tags</a>
+                        </li>
+                        <li>
+                            <a routerLink="/emailTemplate/templates" routerLinkActive="active"
+                                class="side-nav-link-ref">Email Template</a>
+                        </li>
+                        <li>
+                            <a routerLink="/adminUI/sweet-alert" routerLinkActive="active"
+                                class="side-nav-link-ref">Text Template</a>
+                        </li>
+                        <li>
+                            <a routerLink="/list/lists" routerLinkActive="active"
+                                class="side-nav-link-ref">List</a>
+                        </li>
+                        <li>
+                            <a routerLink="/user/users" routerLinkActive="active"
+                                class="side-nav-link-ref">User</a>
+                        </li>
+                        <li>
+                            <a routerLink="/team/teams" routerLinkActive="active"
+                                class="side-nav-link-ref">Team</a>
+                        </li>
+                        <li>
+                            <a routerLink="/admin/roles" routerLinkActive="active"
+                                class="side-nav-link-ref">Roles</a>
+                        </li>
+                        <li>
+                            <a routerLink="/adminUI/sweet-alert" routerLinkActive="active"
+                                class="side-nav-link-ref">Billing</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- End navigation menu -->
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- end #navigation -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end navbar-custom -->

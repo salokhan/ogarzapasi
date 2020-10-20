@@ -1,0 +1,21 @@
+<app-ui-preloader [display]="loading"></app-ui-preloader>
+<div class="container">
+
+    <form class="needs-validation" name="userForm" [formGroup]="cityForm" novalidate>
+        <div class="form-group row mx-0 mt-2 mb-0">
+            <label class='col-4 col-form-label' for="cityName">City name</label>
+            <div class='col-sm-8 px-0'>
+                <input type="text" formControlName="cityName" class="form-control form-control-sm"
+                    [ngClass]="{ 'is-invalid': submitted && f.cityName.errors }" id="cityName"
+                    placeholder="User Name" />
+                <div *ngIf="submitted && f.cityName.errors" class="invalid-feedback">
+                    <div *ngIf="f.cityName.errors.required">City name is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-primary" (click)='saveCity()'>Save changes</button>
+  </div>
+</div>

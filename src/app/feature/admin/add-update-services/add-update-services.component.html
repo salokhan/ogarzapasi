@@ -1,0 +1,21 @@
+<app-ui-preloader [display]="loading"></app-ui-preloader>
+<div class="container">
+
+    <form class="needs-validation" name="userForm" [formGroup]="serviceForm" novalidate>
+        <div class="form-group row mx-0 mt-2 mb-0">
+            <label class='col-4 col-form-label' for="serviceName">Service name</label>
+            <div class='col-sm-8 px-0'>
+                <input type="text" formControlName="serviceName" class="form-control form-control-sm"
+                    [ngClass]="{ 'is-invalid': submitted && f.serviceName.errors }" id="serviceName"
+                    placeholder="User Name" />
+                <div *ngIf="submitted && f.serviceName.errors" class="invalid-feedback">
+                    <div *ngIf="f.serviceName.errors.required">Service name is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-primary" (click)='saveService()'>Save changes</button>
+  </div>
+</div>

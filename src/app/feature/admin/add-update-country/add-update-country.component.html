@@ -1,0 +1,21 @@
+<app-ui-preloader [display]="loading"></app-ui-preloader>
+<div class="container">
+
+    <form class="needs-validation" name="userForm" [formGroup]="countryForm" novalidate>
+        <div class="form-group row mx-0 mt-2 mb-0">
+            <label class='col-4 col-form-label' for="countryName">Country name</label>
+            <div class='col-sm-8 px-0'>
+                <input type="text" formControlName="countryName" class="form-control form-control-sm"
+                    [ngClass]="{ 'is-invalid': submitted && f.countryName.errors }" id="countryName"
+                    placeholder="User Name" />
+                <div *ngIf="submitted && f.countryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.countryName.errors.required">Country name is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-primary" (click)='saveCountry()'>Save changes</button>
+  </div>
+</div>

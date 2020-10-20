@@ -1,0 +1,11 @@
+<div class='row'>
+    <div class="col-sm-2" (click)='editClick();' *ngIf='isEditable'>
+        <span class='actionIcons'><i class="fas fa-edit"></i></span>
+    </div>
+    <div class="col-sm-2" *ngIf='!isEditable' (click)='saveClick();'>
+        <span class='actionIcons'><i class="fas fa-save"></i></span>
+    </div>
+    <div class="col-sm-2" (click)='deleteClick()'>
+        <span class='actionIcons'><i class="fas fa-trash-alt"></i></span>
+    </div>
+</div>

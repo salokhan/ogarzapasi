@@ -1,0 +1,20 @@
+<!-- Navigation Bar-->
+<header id="topnav">
+    <app-locate-topbar >
+    </app-locate-topbar>
+
+    <app-locate-navbar [showMobileMenu]="showMobileMenu"></app-locate-navbar>
+</header>
+<!-- End Navigation Bar-->
+
+<div class="wrapper">
+    <!-- <button (click)='showViaService()'>salman</button> -->
+    <p-toast position="bottom-right"></p-toast>
+    <!-- content -->
+    <router-outlet></router-outlet>
+</div>
+
+<!-- footer -->
+<app-locate-footer></app-locate-footer>
+<!-- right sidebar -->
+<app-locate-rightsidebar></app-locate-rightsidebar>

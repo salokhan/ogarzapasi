@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+.ui-dropdown {
+  min-width: 6.5em !important;
+}
+.ui-dropdown-panel {
+  z-index: 99999 !important;
+}
+.ui-table .ui-table-thead > tr > th {
+  background-color: #f9e7e591 !important;
+}
+hr {
+  border-top: 1px solid #cac5c5 !important;
+}
+.actionIcons {
+  // padding: 3px;
+  cursor: pointer;
+  color: cornflowerblue;
+}
+.actionIcons:hover {
+  // padding: 5px;
+  color: unset;
+}
+.actionIcons-white {
+  // padding: 3px;
+  cursor: pointer;
+  color: white;
+}
+.actionIcons-white:hover {
+  // padding: 5px;
+  color: rgb(217, 235, 235);
+}
+
+.action-text {
+  font-size: xx-small;
+}
+.actionIcons-without-hover {
+  // padding: 3px;
+  color: cornflowerblue;
+}
+.div-border {
+  border-style: solid;
+  border-width: thin;
+  border-color: #cddde4;
+  width: 100%;
+}
+.ui-sidebar {
+  padding: 0.5em !important;
+}
+.panels {
+  height: 55.5vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.panels-tab {
+  height: 45.5vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 70em) {
+  .mv-text-container {
+    white-space: normal !important;
+    text-overflow: initial !important;
+    overflow: auto !important;
+  }
+
+  .ui-table table {
+    width: 99%;
+  }
+
+  .ui-table-responsive .ui-table-thead > tr > th,
+  .ui-table-responsive .ui-table-tfoot > tr > td {
+    display: none !important;
+  }
+
+  .ui-table-responsive .ui-table-tbody > tr > td {
+    text-align: left !important;
+    display: block !important;
+    border: 0 none !important;
+    width: 100% !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    float: left !important;
+    clear: left !important;
+  }
+
+  .ui-table-responsive .ui-table-tbody > tr > td .ui-column-title {
+    padding: 0.4em !important;
+    min-width: 30% !important;
+    display: inline-block !important;
+    margin: -0.4em 1em -0.4em -0.4em !important;
+    font-weight: bold !important;
+  }
+
+  tr > td {
+    text-align: left !important;
+    border: 0px !important;
+    padding-left: 15px !important;
+  }
+
+  tr > th > {
+    border: 0px !important;
+    text-align: left !important;
+  }
+
+  tr {
+    border: 1px solid #d5d5d5 !important;
+  }
+
+  tr > td:last-child {
+    padding-bottom: 15px !important;
+    margin-bottom: 0 !important;
+  }
+
+  tr > td:first-child {
+    padding-top: 15px !important;
+  }
+}
+
+
+@mixin avatar($size) {
+  width: $size;
+  height: $size;
+  text-align: center;
+  border-radius: 50%;
+  margin: 1px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+
+  .initials {
+    position: relative;
+    top: $size * 0.18;
+    font-size: $size * 0.5;
+    line-height: $size * 0.5;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+  }
+
+  .initials-sm {
+    position: relative;
+    top: $size * 0.25;
+    font-size: $size * 0.5;
+    line-height: $size * 0.5;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+  }
+}
+
+.avatar-circle {
+  @include avatar(100px);
+}
+.avatar-circle-sm {
+  @include avatar(50px);
+}
+.avatar-circle-xsm {
+  @include avatar(30px);
+}
+.avatar-circle-lg {
+  @include avatar(250px);
+}

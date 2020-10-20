@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <app-locate-pagetitle title="Countries" [breadcrumbItems]="breadCrumbItems"></app-locate-pagetitle>
+  <div class="row">
+    <div class="col-xl-2"></div>
+    <div class="col-xl-8">
+      <app-ui-preloader [display]="loading">
+      </app-ui-preloader>
+      <div class="card">
+        <div class="card-body">
+          <div class='mb-2'>
+            <div class='text-sm-right'>
+              <button type="button" class="btn btn-primary m-1"
+                (click)='addNewCountry(scrollCreateUpdateNewCountryModal)'>Add country</button>
+              <button type="button" class="btn btn-danger m-1" (click)='deleteSelectedCountries()'>Delete
+                country</button>
+            </div>
+            <p-table #dtCountries [value]="countries" [(selection)]="selectedCountries" dataKey="uid"
+              [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0"
+              [rows]="10">
+              <ng-template pTemplate="caption">
+                <div class="table-header">
+                  List of countries
+                  <!-- <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dtServices.filterGlobal($event.target.value, 'contains')"
+                      placeholder="Global Search" />
+                  </span> -->
+                </div>
+              </ng-template>
+              <ng-template pTemplate="header">
+                <tr>
+                  <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                  </th>
+                  <th pSortableColumn="countryName">Country Name <p-sortIcon field="name"></p-sortIcon>
+                  </th>
+                  <th style="width: 10rem">
+                    Action
+                  </th>
+                </tr>
+
+              </ng-template>
+              <ng-template pTemplate="body" let-country>
+                <tr class="p-selectable-row">
+                  <td>
+                    <p-tableCheckbox [value]="country"></p-tableCheckbox>
+                  </td>
+                  <td>
+                    <span class="p-column-title">{{country.countryName}}</span>
+                  </td>
+                  <td>
+                    <span class="p-column-title">
+                      <a class='action-icon' href="javascript:void(0);" id='edit'
+                        (click)='updateCountry(scrollCreateUpdateNewCountryModal, country)'><i id='edit'
+                          class="mdi mdi-square-edit-outline"></i></a>
+                      <a class='action-icon' href="javascript:void(0);" id='edit'
+                        (click)='goToState(country.uid)'><i id='edit'
+                          class="mdi mdi-square-edit-outline"></i></a>
+                    </span>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+          <div class="row mb-2">
+            <div class='col-sm-12'>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xl-2"></div>
+  </div>
+</div>
+
+
+<!-- Scrollable Modal for create new user  -->
+<ng-template #scrollCreateUpdateNewCountryModal let-modal="close">
+  <div class="modal-header">
+    <h4 class="modal-title">{{createUpdateText}} country</h4>
+    <button type="button" class="close" (click)="modal('Cross click')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" appSlimScroll>
+    <app-add-update-country (outputMessage)='childComponentMessage($event)' [selectedRecord]='selectedCountry'>
+    </app-add-update-country>
+  </div>
+</ng-template>

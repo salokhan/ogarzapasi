@@ -1,0 +1,50 @@
+<app-ui-preloader [display]="loading"></app-ui-preloader>
+<div class="container-fluid">
+  <app-locate-pagetitle title="Serive provider profile" [breadcrumbItems]="breadCrumbItems"></app-locate-pagetitle>
+  <div class="row">
+      <div class="col-xl-2"></div>
+      <div class="col-xl-8">
+          <div class="card">
+              <div class="card-body">
+                <form class="needs-validation" name="userForm" [formGroup]="spProfileForm" novalidate>
+                  <div class="form-group row mx-0 mt-2 mb-0">
+                      <label class='col-4 col-form-label' for="firstName">First name</label>
+                      <div class='col-sm-8 px-0'>
+                          <input type="text" formControlName="firstName" class="form-control form-control-sm"
+                              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" id="firstName"/>
+                          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                              <div *ngIf="f.firstName.errors.required">First name is required</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group row mx-0 mt-2 mb-0">
+                    <label class='col-4 col-form-label' for="lastName">Last name</label>
+                    <div class='col-sm-8 px-0'>
+                        <input type="text" formControlName="lastName" class="form-control form-control-sm"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" id="firstName"/>
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last name is required</div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="form-group row mx-0 mt-2 mb-0">
+                      <label class='col-4 col-form-label' for="role">Service</label>
+                      <div class='col-sm-8 px-0'>
+                          <p-dropdown  [style]="{'width':'100%'}"
+                              [ngClass]="{ 'is-invalid': submitted && f.servies.errors }" [options]="serviesDS"
+                              formControlName="servies" optionLabel="name">
+                          </p-dropdown>
+                          <div *ngIf="submitted && f.servies.errors" class="invalid-feedback">
+                              <div *ngIf="f.servies.errors.required">Services is required</div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-2"></div>
+  </div>
+</div>
+
+

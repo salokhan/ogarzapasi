@@ -1,0 +1,91 @@
+<h1 class="header">Welcome! Register with us, Rate the profiles and help the community to find the best service provider
+</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 col-md-offset-3">
+      <form [formGroup]="registerForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>First name *</label>
+              <input type="text" formControlName="firstName" class="form-control" />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Last name *</label>
+              <input type="text" formControlName="lastName" class="form-control" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Email address *</label>
+              <input type="email" formControlName="email" class="form-control" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Valid email address is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Password *</label>
+              <input type="password" class="form-control" formControlName="password" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+              </div>
+              <label class="error">{{ errorMessage }}</label>
+              <label class="success">{{ successMessage }}</label>
+            </div>
+          </div>
+        </div>
+        <!-- <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">
+          Register
+        </button> -->
+      </form>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-primary btn-block" (click)="tryRegister(registerForm.value)">
+        Register
+      </button>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">
+        Register with Facebook
+      </button>
+    </div>
+  </div> -->
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">
+        Register with Google
+      </button>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">
+        Register with Twitter
+      </button>
+    </div>
+  </div> -->
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 col-md-offset-4">
+      <p>Already have an account? <a href="/account/login">Login</a></p>
+    </div>
+  </div>
+</div>
